@@ -50,6 +50,12 @@ class Linear(Node):
 
         Your code goes here!
         """
+        X = self.inbound_nodes[0].value
+        W = self.inbound_nodes[1].value
+        b = self.inbound_nodes[2].value
+
+        # Numpy dot product to the rescue!
+        self.value = np.dot(X, W) + b
 
 
 def topological_sort(feed_dict):
